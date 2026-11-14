@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Pixelify+Sans:wght@500;700&display=swap');
+
+:root {
+  --gelap: #0A0F14;
+  --aksen: #3DFF9A;
+  --font-pixel: 'Pixelify Sans', system-ui, sans-serif;
+  --font-isi: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--gelap);
+  color: var(--aksen);
+  font-family: var(--font-isi);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+::selection { background: var(--aksen); color: var(--gelap); }
+
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--aksen); outline-offset: 3px; }
+
+h1, h2, h3 { font-family: var(--font-pixel); font-weight: 700; line-height: 1.15; }
+h1 { font-size: clamp(2.3rem, 6.5vw, 4rem); }
+h2 {
+  font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+  max-width: 22ch;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 8px;
+}
+h3 { font-size: 1.5rem; margin-bottom: .6rem; }
+p + p { margin-top: 1rem; }
+
+section { max-width: 960px; margin: 0 auto; padding: 5rem 1.5rem; scroll-margin-top: 3.5rem; }
+
+/* Pemisah antar section */
+.band, .bg-peach, .bg-hijau { border-top: 4px solid var(--aksen); }
+
+/* Navbar */
+.navbar { position: sticky; top: 0; z-index: 10; background: var(--gelap); color: var(--aksen); border-bottom: 4px solid var(--aksen); }
+.navbar-inner { max-width: 960px; margin: 0 auto; padding: .8rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+.navbar a { text-decoration: none; font-family: var(--font-pixel); font-weight: 700; }
+.navbar-inner > a { font-size: 1.3rem; }
+.navbar ul { list-style: none; display: flex; gap: 1.5rem; }
+.navbar ul a:hover { background: var(--aksen); color: var(--gelap); padding: 0 .4rem; margin: 0 -.4rem; }
+
+/* Jendela ala terminal */
+.window { border: 3px solid var(--aksen); box-shadow: 8px 8px 0 var(--aksen); }
+.window-bar { display: flex; justify-content: space-between; align-items: center; background: var(--aksen); color: var(--gelap); padding: .45rem .9rem; font-family: var(--font-pixel); font-weight: 500; }
+.window-dots { display: flex; gap: 6px; }
+.window-dots i { width: 10px; height: 10px; background: var(--gelap); display: block; }
+.window-body { background: var(--gelap); padding: 1.5rem; }
+
+/* Tombol */
+.actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+.btn { display: inline-block; padding: .75rem 1.5rem; background: var(--aksen); color: var(--gelap); text-decoration: none; font-family: var(--font-pixel); font-weight: 700; border: 3px solid var(--aksen); }
+.btn:hover { background: var(--gelap); color: var(--aksen); }
+.btn-outline { background: transparent; color: var(--aksen); }
+.btn-outline:hover { background: var(--aksen); color: var(--gelap); }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 3.5rem; align-items: center; min-height: 80vh; }
+.level { display: inline-block; margin-bottom: 1.25rem; padding: .25rem .8rem; background: var(--aksen); color: var(--gelap); font-family: var(--font-pixel); font-weight: 700; }
+.hero-sub { margin: 1.25rem 0 2rem; font-size: 1.05rem; max-width: 52ch; }
+.avatar { aspect-ratio: 1; border: 3px solid var(--aksen); background: var(--gelap); display: grid; place-items: center; overflow: hidden; margin-bottom: 1.25rem; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+.avatar span { font-family: var(--font-pixel); font-size: 5rem; font-weight: 700; }
+.info div + div { margin-top: .6rem; }
+.info dt { font-family: var(--font-pixel); font-weight: 500; font-size: .95rem; }
+.info dd { font-weight: 500; }
+
+/* Tag skill */
+.tags { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.25rem; }
+.tags li { padding: .2rem .8rem; border: 2px solid var(--aksen); background: transparent; font-weight: 700; font-size: .85rem; }
+
+/* Project */
+.project + .project { margin-top: 2.5rem; }
+.project-img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border: 3px solid var(--aksen); margin-bottom: 1.25rem; display: block; }
+.project .actions { margin-top: 1.5rem; }
+
+footer { text-align: center; padding: 1.5rem; background: var(--gelap); color: var(--aksen); font-size: .85rem; border-top: 4px solid var(--aksen); }
+
+@media (max-width: 700px) {
+  section { padding: 3.5rem 1.25rem; }
+  .hero { grid-template-columns: 1fr; gap: 2.5rem; min-height: auto; }
+  .navbar ul { gap: 1rem; }
+}
